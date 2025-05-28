@@ -1,0 +1,17 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_111_2071)">
+<mask id="mask0_111_2071" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="800">
+<path d="M800 0H0V800H800V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_111_2071)">
+<path d="M250 600L225 500L200 400L175 300L150 200H775L725 550C721.5 576 703 600 675 600H250Z" fill="#FB05FF"/>
+<path d="M575 675C602.5 675 625 697.5 625 725C625 752.5 602.5 775 575 775C547.5 775 525 752.5 525 725C525 697.5 547.5 675 575 675ZM275 675C302.5 675 325 697.5 325 725C325 752.5 302.5 775 275 775C247.5 775 225 752.5 225 725C225 697.5 247.5 675 275 675Z" fill="#668077"/>
+<path d="M200 400H50M225 500H75M175 300H25M650 400H275M625 500H300M675 300H250M250 600H675C703.125 600 721.55 575.95 725 550L775 200H150L100 25H25M325 725C325 697.4 302.6 675 275 675C247.4 675 225 697.4 225 725C225 752.6 247.4 775 275 775C302.6 775 325 752.6 325 725ZM625 725C625 697.4 602.6 675 575 675C547.4 675 525 697.4 525 725C525 752.6 547.4 775 575 775C602.6 775 625 752.6 625 725Z" stroke="black" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_111_2071">
+<rect width="800" height="800" fill="white"/>
+</clipPath>
+</defs>
+</svg>
