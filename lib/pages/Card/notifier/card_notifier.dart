@@ -147,7 +147,7 @@ class CardNotifier extends _$CardNotifier {
       return;
     }
     final firebase = FirebaseService();
-    firebase.deleteCard(userId, cardId);
+    await firebase.deleteCard(userId, cardId);
     // Tutup dialog dulu
     navKey.currentState!.pop();
     toastInfo(

@@ -21,7 +21,6 @@ class TotalBalance extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedCardId = ref.watch(selectedCardProvider).toString();
-    final transaction = ref.watch(transactionNotifierProvider);
     final transactionNotifier = ref.read(transactionNotifierProvider.notifier);
     final currentFilter = ref.watch(transactionFilterNotifierProvider);
     final currentFilterNotifier = ref.read(

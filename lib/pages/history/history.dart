@@ -39,14 +39,13 @@ class _HistoryState extends ConsumerState<History>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final cardid = ref.watch(selectedCardProvider);
     final userId = Global.storageService.getUserId();
-    final userNotifier = ref.watch(userNotifierProvider.notifier);
     return TemplateAPP(
-      userNotifier: userNotifier,
       userId: userId,
-      Content: [
+      content: [
         TotalBalance(tabController: _tabController),
         SizedBox(height: 10),
         Expanded(

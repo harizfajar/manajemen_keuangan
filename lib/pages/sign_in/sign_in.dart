@@ -73,7 +73,7 @@ class SignIn extends ConsumerWidget {
                           indicatorPadding: EdgeInsets.only(bottom: 10),
                           dividerHeight: 0,
                           indicatorColor: AppColors.primary,
-                          labelColor: Colors.black,
+                          labelColor: Color(0xFF184666),
                           labelStyle: TextStyle(
                             fontSize: 18,
                             fontFamily: "Capriola",
@@ -85,7 +85,7 @@ class SignIn extends ConsumerWidget {
                     ),
                   ],
                 ),
-              ),
+              ),                                      
             ],
           ),
         ),

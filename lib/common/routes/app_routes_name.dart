@@ -10,4 +10,5 @@ class AppRoutesName {
   static String EDITCARD = "/editcard";
   static String ADDTRANSACTION = "/addtransaction";
   static String EDITTRANSACTION = "/edittransaction";
+  static String KALKULATOR = "/kalkulator";
 }

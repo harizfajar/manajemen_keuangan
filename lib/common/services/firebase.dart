@@ -252,14 +252,22 @@ class FirebaseService {
   }
 
   Future<void> deleteCard(String userId, String cardId) async {
-    await FirebaseFirestore.instance
+    final cardRef = FirebaseFirestore.instance
         .collection('users')
         .doc(userId)
         .collection('cards')
-        .doc(cardId)
-        .delete();
+        .doc(cardId);
 
-    print("Kartu berhasil dihapus!");
+    final transactionsRef = cardRef.collection('transactions');
+    final transactionsSnapshot = await transactionsRef.get();
+
+    for (final doc in transactionsSnapshot.docs) {
+      await transactionsRef.doc(doc.id).delete();
+    }
+
+    await cardRef.delete();
+
+    print("Kartu dan transaksi berhasil dihapus!");
   }
 
   Future<void> deleteTransaction(

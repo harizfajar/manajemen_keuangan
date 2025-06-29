@@ -1,3 +1,4 @@
+import 'package:duitKu/pages/Kalkulator/kalkulator.dart';
 import 'package:flutter/material.dart';
 import 'package:duitKu/common/model/cards.dart';
 import 'package:duitKu/common/model/transactions.dart';
@@ -42,6 +43,12 @@ class AppPages {
         builder: (args) {
           final data = args as TransactionModel;
           return EditTransaction(transactionData: data);
+        },
+      ),
+      RouteEntity(
+        path: AppRoutesName.KALKULATOR,
+        builder: (_) {
+          return Kalkulator();
         },
       ),
     ];

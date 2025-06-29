@@ -1,6 +1,7 @@
 import 'package:duitKu/common/routes/app_routes_name.dart';
 import 'package:duitKu/pages/beranda/beranda.dart';
 import 'package:duitKu/pages/history/history.dart';
+import 'package:duitKu/pages/lainnya/lainnya.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +37,7 @@ class _ApplicationState extends ConsumerState<Application>
     return Scaffold(
       body: IndexedStack(
         index: selectedIndex,
-        children: [Beranda(), History(), Text("Settings")],
+        children: [Beranda(), History(), Lainnya()],
       ),
       floatingActionButton: IconButton(
         icon: Container(
@@ -55,7 +56,7 @@ class _ApplicationState extends ConsumerState<Application>
       ),
       bottomNavigationBar: SafeArea(
         child: Container(
-          color: AppColors.secondary,
+          color: selectedIndex == 2 ? Colors.white : AppColors.secondary,
           child: ClipRRect(
             clipBehavior: Clip.hardEdge,
             borderRadius: BorderRadius.only(
@@ -65,10 +66,15 @@ class _ApplicationState extends ConsumerState<Application>
             child: SizedBox(
               height: 70,
               child: BottomNavigationBar(
-                backgroundColor: Colors.white, // Penting agar radius terlihat
+                backgroundColor:
+                    selectedIndex == 2
+                        ? AppColors.secondary
+                        : Colors.white, // Penting agar radius terlihat
                 type: BottomNavigationBarType.fixed,
-                selectedItemColor: AppColors.secondary,
-                unselectedItemColor: Colors.grey,
+                selectedItemColor:
+                    selectedIndex == 2 ? Colors.white : AppColors.secondary,
+                unselectedItemColor:
+                    selectedIndex == 2 ? Colors.white70 : Colors.grey,
                 currentIndex: selectedIndex,
                 selectedLabelStyle: GoogleFonts.capriola(
                   fontSize: 12,
@@ -82,16 +88,18 @@ class _ApplicationState extends ConsumerState<Application>
                   ref.read(bottombarIndexProvider.notifier).changeValue(value);
                 },
                 items: [
-                  BottomNavBarItemCust(),
+                  BottomNavBarItemCust(selectedIndex: selectedIndex),
                   BottomNavBarItemCust(
                     assets: "assets/logo/history.svg",
                     label: "History",
+                    selectedIndex: selectedIndex,
                   ),
                   BottomNavBarItemCust(
                     assets: "assets/logo/lainnya.svg",
                     label: "Lainnya",
                     height: 34,
                     activeHeight: 38,
+                    selectedIndex: selectedIndex,
                   ),
                 ],
               ),
@@ -107,17 +115,18 @@ class _ApplicationState extends ConsumerState<Application>
     String? label,
     double? height,
     double? activeHeight,
+    int? selectedIndex = 0,
   }) {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
         assets ?? "assets/logo/beranda.svg",
-        color: Colors.grey,
+        color: selectedIndex == 2 ? Colors.white70 : Colors.grey,
         height: height ?? 30,
       ),
       activeIcon: SvgPicture.asset(
         assets ?? "assets/logo/beranda.svg",
         height: activeHeight ?? 35,
-        color: AppColors.secondary,
+        color: selectedIndex == 2 ? Colors.white : AppColors.secondary,
       ),
       label: label ?? "Beranda",
     );

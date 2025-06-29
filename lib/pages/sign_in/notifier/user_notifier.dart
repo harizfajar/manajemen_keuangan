@@ -35,7 +35,7 @@ class UserNotifier extends _$UserNotifier {
   }
 
   void changeEmail(String email) {
-    final current = state.value ?? UserModel();
+    final   current = state.value ?? UserModel();
     state = AsyncData(current.copyWith(email: email));
   }
 

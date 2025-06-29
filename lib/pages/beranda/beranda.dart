@@ -27,8 +27,7 @@ class Beranda extends ConsumerWidget {
     final selectedIndexNotifier = ref.read(bottombarIndexProvider.notifier);
     return TemplateAPP(
       userId: userId,
-      userNotifier: UserNotifier,
-      Content: [
+      content: [
         Expanded(
           child: SingleChildScrollView(
             child: Column(

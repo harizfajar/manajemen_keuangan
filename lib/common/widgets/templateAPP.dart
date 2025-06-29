@@ -2,17 +2,15 @@ import 'package:duitKu/common/widgets/color.dart';
 import 'package:duitKu/common/widgets/text.dart';
 import 'package:duitKu/pages/Card/cards.dart';
 import 'package:duitKu/pages/history/user_info.dart';
-import 'package:duitKu/pages/sign_in/notifier/user_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 class TemplateAPP extends ConsumerWidget {
-  final UserNotifier? userNotifier;
   final String? userId;
-  final List<Widget>? Content;
-  const TemplateAPP({super.key, this.userNotifier, this.userId, this.Content});
+  final List<Widget>? content;
+  const TemplateAPP({super.key, this.userId, this.content});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +23,7 @@ class TemplateAPP extends ConsumerWidget {
             child: Stack(
               children: [
                 Container(
-                  color: Colors.transparent,
+                  // color: Colors.transparent,
                   child: Container(
                     height: 140,
                     decoration: BoxDecoration(
@@ -36,18 +34,12 @@ class TemplateAPP extends ConsumerWidget {
                 Positioned(
                   left: 20,
                   top: 40,
-                  child: GestureDetector(
-                    onTap: () {
-                      print("logout");
-                      userNotifier!.logout();
-                    },
-                    child: Row(
-                      children: [
-                        SvgPicture.asset("assets/logo/logo.svg", width: 25),
-                        SizedBox(width: 1.h),
-                        textCapriola(fontSize: 16, text: "uangQ"),
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset("assets/logo/logo.svg", width: 25),
+                      SizedBox(width: 1.h),
+                      textCapriola(fontSize: 16, text: "uangQ"),
+                    ],
                   ),
                 ),
                 Positioned(
@@ -84,7 +76,7 @@ class TemplateAPP extends ConsumerWidget {
                   topRight: Radius.circular(15),
                 ),
 
-                child: Column(children: Content!),
+                child: Column(children: content!),
               ),
             ),
           ),
