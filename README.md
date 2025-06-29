@@ -1,3 +1,3 @@
-# manajemen_keuangan
+# Aplikasi UangQ
 
-A new Flutter project.
+Untuk Manage Keuangan Anda Agar lebih teratur
